@@ -39,42 +39,6 @@
     <span class="status" id="status"></span>
   </div>
 
-  <section class="panel" aria-labelledby="hCands">
-    <div class="panel-head">
-      <h2 id="hCands">จุดผิดปกติที่พบ</h2>
-      <span class="sub" id="candsNote"></span>
-    </div>
-    <div class="tally" id="tally"></div>
-    <div class="cands" id="cands"></div>
-  </section>
-
-  <section class="panel" aria-labelledby="hTopics">
-    <details class="settings" id="topicsBox">
-      <summary id="hTopics">จัดการหัวข้ออาการและกลุ่มสาเหตุ</summary>
-      <p class="sub" style="margin:8px 0 0">หัวข้อ 0–13 มีกฎในระบบอยู่แล้ว แก้ชื่อและกลุ่มได้ หัวข้อที่เพิ่มเองจะถูกเลือกเมื่อพบ "คำค้นใน log" ในช่วงก่อนค้าง (ใส่หลายคำคั่นด้วย | ได้) และใส่คำค้นเพิ่มให้หัวข้อเดิมก็ได้</p>
-      <div class="tbl-wrap" style="margin-top:10px">
-        <table class="topic-tbl">
-          <thead><tr><th>#</th><th>ชื่อหัวข้อ</th><th>กลุ่มสาเหตุ</th><th>คำค้นใน log (ไม่บังคับ)</th><th>ค้นใน log</th><th></th></tr></thead>
-          <tbody id="topicRows"></tbody>
-        </table>
-      </div>
-      <div class="actions" style="margin-top:10px">
-        <button type="button" id="btnAddTopic">+ เพิ่มหัวข้อใหม่</button>
-        <button type="button" class="primary" id="btnSaveTopics">บันทึกหัวข้อ</button>
-        <span class="copy-ok" id="topicOk"></span>
-      </div>
-      <div class="share-box">
-        <div class="sub">ใช้หัวข้อและการตั้งค่าชุดเดียวกันทั้งทีม: คนหนึ่งกด "คัดลอกการตั้งค่า" แล้วส่งให้เพื่อน อีกคนวางในช่องด้านล่างแล้วกด "นำเข้า"</div>
-        <div class="actions">
-          <button type="button" id="btnExport">คัดลอกการตั้งค่า</button>
-          <button type="button" id="btnImport">นำเข้า</button>
-          <span class="copy-ok" id="exportOk"></span>
-        </div>
-        <textarea id="importBox" rows="3" placeholder="วางการตั้งค่าที่ได้รับจากเพื่อนร่วมทีมที่นี่" aria-label="วางการตั้งค่า"></textarea>
-      </div>
-    </details>
-  </section>
-
   <section class="panel" aria-labelledby="hLanes">
     <div class="panel-head">
       <h2 id="hLanes">ภาพรวมการเขียน log</h2>
@@ -145,6 +109,42 @@
       <div class="actions"><button type="button" id="btnCopyLine">คัดลอกบรรทัดนี้</button><button type="button" id="btnCtx">ดู ±1 นาที รอบบรรทัดนี้ (ทุก log)</button><span class="copy-ok" id="lineOk"></span></div>
     </div>
     <textarea class="fallback" id="fallback" hidden readonly aria-label="ข้อความสำหรับคัดลอก"></textarea>
+  </section>
+
+  <section class="panel" aria-labelledby="hCands">
+    <div class="panel-head">
+      <h2 id="hCands">จุดผิดปกติที่พบ</h2>
+      <span class="sub" id="candsNote"></span>
+    </div>
+    <div class="tally" id="tally"></div>
+    <div class="cands" id="cands"></div>
+  </section>
+
+  <section class="panel" aria-labelledby="hTopics">
+    <details class="settings" id="topicsBox">
+      <summary id="hTopics">จัดการหัวข้ออาการและกลุ่มสาเหตุ</summary>
+      <p class="sub" style="margin:8px 0 0">หัวข้อ 0–13 มีกฎในระบบอยู่แล้ว แก้ชื่อและกลุ่มได้ หัวข้อที่เพิ่มเองจะถูกเลือกเมื่อพบ "คำค้นใน log" ในช่วงก่อนค้าง (ใส่หลายคำคั่นด้วย | ได้) และใส่คำค้นเพิ่มให้หัวข้อเดิมก็ได้</p>
+      <div class="tbl-wrap" style="margin-top:10px">
+        <table class="topic-tbl">
+          <thead><tr><th>#</th><th>ชื่อหัวข้อ</th><th>กลุ่มสาเหตุ</th><th>คำค้นใน log (ไม่บังคับ)</th><th>ค้นใน log</th><th></th></tr></thead>
+          <tbody id="topicRows"></tbody>
+        </table>
+      </div>
+      <div class="actions" style="margin-top:10px">
+        <button type="button" id="btnAddTopic">+ เพิ่มหัวข้อใหม่</button>
+        <button type="button" class="primary" id="btnSaveTopics">บันทึกหัวข้อ</button>
+        <span class="copy-ok" id="topicOk"></span>
+      </div>
+      <div class="share-box">
+        <div class="sub">ใช้หัวข้อและการตั้งค่าชุดเดียวกันทั้งทีม: คนหนึ่งกด "คัดลอกการตั้งค่า" แล้วส่งให้เพื่อน อีกคนวางในช่องด้านล่างแล้วกด "นำเข้า"</div>
+        <div class="actions">
+          <button type="button" id="btnExport">คัดลอกการตั้งค่า</button>
+          <button type="button" id="btnImport">นำเข้า</button>
+          <span class="copy-ok" id="exportOk"></span>
+        </div>
+        <textarea id="importBox" rows="3" placeholder="วางการตั้งค่าที่ได้รับจากเพื่อนร่วมทีมที่นี่" aria-label="วางการตั้งค่า"></textarea>
+      </div>
+    </details>
   </section>
 
   <section class="panel" aria-labelledby="hPromo">
